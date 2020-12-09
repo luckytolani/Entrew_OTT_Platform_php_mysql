@@ -1,0 +1,99 @@
+<html>
+
+<head>
+    <title>
+        Entrew Registration
+    </title>
+    <link rel=stylesheet type=text/css href=./css/register.css>
+</head>
+<script type=text/javascript>
+        function errcheck()
+        {
+            var errs = location.search.split("?")[1];
+            var val = errs.split("=")[1];
+            
+            if (val == 'passlen')
+            {
+                alert("Password Length should > 8 chars");
+                return ;
+            }
+
+            if (val == 'passconpass')
+            {
+                alert("Password and Confirm Password didn't match\n");
+                return ;
+            }
+
+            if (val == "email")
+            {
+                alert("Enter a valid email-id");
+            }
+        }
+        function checktype()
+        {
+            var val = location.search.split("?")[1];
+            var type = val.split("=")[1];
+
+            if (type == 'admin')
+            {
+                document.write("<td> <input class=uname name=admin-user type=text value=admin readonly> <br> </td>");
+            }
+            else
+            {
+                document.write("<td> <input class=passwd name=admin-user type=text value=user readonly> <br> </td>");
+            }
+        }
+    </script>
+    <body>
+        <div class="nav">
+            <div class="nav1">
+                <center> 
+                    <a href="index.html">
+                    Entrew<br>Best Webseries
+                </a>
+                </center>
+            </div>
+            <div class="navmid">
+                <Marquee><b>Our Motto:-</b>&nbsp; Viewer Satisfaction + Entertainment x 3</Marquee>
+            </div>
+            <div class="nav2">
+                <center>
+                    <a href="login.html" >Login</a> 
+                </center>
+            </div>
+    </div>
+    <center>
+        <h1 class="header">Register Your-self</h1>
+        <form name=reg action="reg.php" method=POST>
+            <table align=center>
+                <tr>
+                    <td class="label"> Username: </td>
+                    <td> <input required class="uname" name=uname type=text value=""> <br> </td>
+                </tr>
+                <tr>
+                    <td class="label"> Password: </td>
+                    <td> <input required class="passwd" name=passwd type=password value=""> <br> </td>
+                </tr>
+                <tr>
+                    <td class="label"> Confirm Password: </td>
+                    <td> <input required class="passwd" name=conpasswd type=password value=""> <br> </td>
+                </tr>
+                <script type=text/javascript>
+                    errcheck()
+                </script>
+                <tr>
+                    <td class="label"> E-mail id: </td>
+                    <td> <input required class=uname name=email type=text value=""> <br> </td>
+                </tr>
+                <tr>
+                    <td class="label" style="padding-top: 20px;" >User-Type</td>
+                    <script>
+                        checktype();
+                    </script>
+                </tr>
+            </table>
+                <div align=center> <input name=register class=login_btn type=submit value="Register"> <br> </div align=center>
+        </form>
+    </center>
+</body>
+</html>
