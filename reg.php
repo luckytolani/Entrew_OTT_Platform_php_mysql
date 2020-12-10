@@ -1,6 +1,5 @@
 <?php
     include_once("db_conn.php");
-
     if (isset($_POST['register']))
     {
         $uname = $_POST['uname'];

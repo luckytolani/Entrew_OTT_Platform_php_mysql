@@ -1,6 +1,6 @@
 <html>
 <title>
-    Playlists
+    Home
 </title>
 
 <head>
@@ -150,7 +150,7 @@
     </div>";
     echo "<div class = nav3><a href=#>" . $_SESSION['uname'] . "</a></div>";
     if ($_SESSION['type'] == 'admin') {
-        echo "<a class = nav3 href=welcome.html>Upload </a>";
+        echo "<a class = nav3 href=welcome.html>Settings</a>";
     }
     echo "</div>
      <center>

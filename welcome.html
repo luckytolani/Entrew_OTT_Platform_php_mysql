@@ -3,7 +3,7 @@
         Video Upload
     </title>
     <head>
-        <link rel=stylesheet type=text/css href=./css/welcome.css>
+        <link rel=stylesheet type=text/css href="welcome.css">
     </head>
 
     <script type=text/javascript>
@@ -46,51 +46,59 @@
         }
     </script>
 
-    <div class="topnav">
-        <a class=active href=playlist.php> Go to Playlist </a>
-        <a href=register.html?user=admin> Add Admin </a>
-        <a href=register.html?user=user> Add User </a>
-        <a href=about.php> About </a>
-        <a class=logout href=logout.php> Logout </a>
-    </div>
-    <body>
+    
+    <body class="main">
         <script type=text/javascript>
             check();
             errcheck();
         </script>
-        <fieldset class=sector>
-            <h3 class="head"> Video Details </h3>
+        <div class="nav">
+            <div class="nav1">
+                <center>
+                    <a href="index.html">
+                    Entrew<br>Best Webseries</a>
+                </center>
+            </div>
+            <div class="navmid">
+                <Marquee><b>Our Motto:-</b>&nbsp; Viewer Satisfaction + Entertainment x 3</Marquee>
+            </div>
+            <div class="nav2"><a class=active href=playlist.php>Playlist </a></div>
+            <div class="nav3"><a href=register.html?user=admin> Add Admin </a></div>
+            <div class="nav2"><a href=register.html?user=user> Add User </a></div>
+            <div class="nav2"><a href=about.php>Users</a></div>
+            <div class="nav2"><a class=logout href=logout.php> Logout </a></div>
+        </div>
+        <center>
+            <h1 class="header"> Video Details </h1>
+            <div class="form">
             <form name=wseries action=welcome.php method=post>
                 <table align=center>
                     <tr>
-                        <td> <input name=namews type=text value="" placeholder="Name of series"> </td>
+                        <td class="input"> <input class="input" required name=namews type=text value="" placeholder="Name of series"> </td>
                     </tr>
                     <tr>
-                        <td> <input name=genrews type=text value="" placeholder="Genre of series"> </td>
+                        <td class="input"> <input class="input" required name=genrews type=text value="" placeholder="Genre of series"> </td>
                     </tr>
                     <tr>
-                        <td> <input name=seasonws type=text value="" placeholder="No of Seasons"> </td>
+                        <td class="input"> <input class="input" required name=seasonws type=number value="" placeholder="No of Seasons"> </td>
                     </tr>
                     <tr>
-                        <td> <input name=episodews type=text value="" placeholder="No of episodes"> </td>
+                        <td class="input"> <input class="input" required name=episodews type=number value="" placeholder="No of episodes"> </td>
                     </tr>
                     <tr>
-                        <td> <input name=durationws type=text value="" placeholder="Duration(in mins)"> </td>
+                        <td class="input"> <input class="input" required name=durationws type=number value="" placeholder="Duration(in mins)"> </td>
                     </tr>
                     <tr>
-                        <td> <input name=ratews type=text value="" placeholder="Rating"> </td>
-                    </tr>
-                    <tr>
-                        <td> Thumbnail <br> <input name=imagews type=file value="" multiple> </td>
-                    </tr>
-                    <tr>
-                        <td> Video Link <br> <input name=videows type=file value="" multiple> </td>
-                    </tr>
-                    <tr align=center>
-                        <td> <input name=Submit class=login_btn type=submit value="Submit"> </td>
+                        <td class="input"> <input class="input" required name=ratews type=tnumber value="" placeholder="Rating"> </td>
                     </tr>
                 </table>
+                <center>
+                        <div class="grp">Thumbnail &nbsp;<input class="grp2" name=imagews type=file value="" multiple> </div>
+                        <div class="grp">video &nbsp;<input class="grp2" name=videows type=file value="" multiple> </div>
+                        <div> <input required name=Submit class=login_btn type=submit value="Submit"> </div>
+                    </center>
             </form>
-        </fieldset>
+        </div>
+    </center>
     </body>
 </html>
