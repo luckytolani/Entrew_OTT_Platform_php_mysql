@@ -68,8 +68,9 @@ input{
     /* left: 45%; */
     padding-bottom: 5px;
     width: 500px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     opacity: 0.8;
-    background-color: orange;
+    background-color: aliceblue;
     border-bottom: 2px solid white;
     border-radius: 20px;
 }

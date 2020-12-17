@@ -1,47 +1,13 @@
 <html>
-<title>
-    Login Form
-</title>
-
 <head>
+    <title>
+        Entrew login
+    </title>
     <link rel=stylesheet type=text/css href=./css/login.css>
 </head>
 
-<script type=text/javascript>
-        function errcheck()
-        {
-            var reg = location.search.split("?")[1];
-            var val = reg.split("=")[1];
-            if (val == 'alreadyreg')
-            {
-                document.write("You are already registered user");
-            }
-
-            if (val == 'newreg')
-            {
-                document.write("Welcome, You can login now");
-            }
-
-            if (val == 'logout')
-            {
-                document.write("Hope you had a good time :-)");
-            }
-
-            if (val == 'loginfail')
-            {
-                document.write("Username or password is incorrect");
-            }
-
-            if (val == 'firstlogin')
-            {
-                alert("First Login");
-            }
-
-            if (val == 'permit')
-            {
-                alert("You don't have required permissions");
-            }
-        }
+<script type=text/javascript src="script.js">
+        
     </script>
 
 <body>
@@ -58,15 +24,10 @@
         </div>
         <div class="nav3">
             <center>
-                <a href="register.html">Register</a>
+                <a href="register.html?user=user">Register</a>
             </center>
         </div>
     </div>
-    <center id=errinfo>
-        <script type=text/javascript>
-                errcheck();
-            </script>
-    </center>
     <center>
         <h1 class="header">Login Into Your Account</h1>
         <div class="form">
@@ -81,9 +42,6 @@
                 <td> <input class="passwd" name=passwd type=password value="" required> <br> </td>
             </tr>
         </table>
-    <div class="fgp" align = center>
-        <a href=forgot_passwd.html> Forgot Password </a>
-    </div>
     <div align = center>
         <input class="login_btn" name=login type=submit value="Log In"> <br>
     </div>

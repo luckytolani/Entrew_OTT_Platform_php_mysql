@@ -1,9 +1,9 @@
 <html>
-    <title> 
-        Video Upload
-    </title>
     <head>
-        <link rel=stylesheet type=text/css href="welcome.css">
+        <title> 
+            Entrew Admin
+        </title>
+        <link rel=stylesheet type=text/css href="css/welcome.css">
     </head>
 
     <script type=text/javascript>
@@ -11,28 +11,7 @@
         {
             var errs = location.search.split("?")[1];
             var val = errs.split("=")[1];
-            if (val == 'name')
-            {
-                alert("Name of the Web-Series is must");
-                return ;
-            }
 
-            if (val == 'genre')
-            {
-                alert("How did you miss genre");
-                return ;
-            }
-
-            if (val == 'image')
-            {
-                alert("OOPS you forgot the thumbnail");
-                return ;
-            }
-
-            if (val == 'video')
-            {
-                alert("Video Missing");
-            }
         }
         function check()
         {
@@ -40,7 +19,7 @@
             var val = status.split("=")[1];
             if (val == 'added')
             {
-                alert("Series Uploaded");
+                alert("Series Uploaded successfully");
                 return ;
             }
         }
@@ -62,10 +41,8 @@
             <div class="navmid">
                 <Marquee><b>Our Motto:-</b>&nbsp; Viewer Satisfaction + Entertainment x 3</Marquee>
             </div>
-            <div class="nav2"><a class=active href=playlist.php>Playlist </a></div>
-            <div class="nav3"><a href=register.html?user=admin> Add Admin </a></div>
+            <div class="nav2"><a class=active href=playlist.php>Dashboard</a></div>
             <div class="nav2"><a href=register.html?user=user> Add User </a></div>
-            <div class="nav2"><a href=about.php>Users</a></div>
             <div class="nav2"><a class=logout href=logout.php> Logout </a></div>
         </div>
         <center>
@@ -89,12 +66,21 @@
                         <td class="input"> <input class="input" required name=durationws type=number value="" placeholder="Duration(in mins)"> </td>
                     </tr>
                     <tr>
-                        <td class="input"> <input class="input" required name=ratews type=tnumber value="" placeholder="Rating"> </td>
+                        <td class="input"><label style="color: cornsilk; margin-left: 120px;">Rate The Series</label></td>
+                    </tr>
+                    <tr>
+                        <td class="input"> <input type="range" class="input" name = "ratews" min="0" max="10" step="0.1" id="rating" oninput="updateSlider(this.value);"></td>
+                        <script>
+                            function updateSlider(val){
+                            console.log(val);
+                            document.getElementById('ratingval').value = val;
+                        }
+                        </script>
                     </tr>
                 </table>
                 <center>
-                        <div class="grp">Thumbnail &nbsp;<input class="grp2" name=imagews type=file value="" multiple> </div>
-                        <div class="grp">video &nbsp;<input class="grp2" name=videows type=file value="" multiple> </div>
+                        <div class="grp">Thumbnail &nbsp;<input class="grp2" name=imagews type="file" value="" multiple> </div>
+                        <div class="grp">video &nbsp;<input class="grp2" accept=".mp4,.mkv" name="videows" type=file value="" multiple> </div>
                         <div> <input required name=Submit class=login_btn type=submit value="Submit"> </div>
                     </center>
             </form>

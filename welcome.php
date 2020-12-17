@@ -1,7 +1,6 @@
 <?php
     session_start();
     include_once('db_conn.php');
-
     if (isset($_POST['Submit']))
     {
         $namews = $_POST['namews'];
@@ -55,9 +54,9 @@
         header("location:welcome.html?stat=video");
         return ;
     }
-
-    $db_query = mysqli_query($conn, "insert into web_series (ws_name, ws_genre, no_of_seasons, no_of_episodes, duration, ratings, ws_image, ws_video, pub_date) values ('$namews', '$genrews', '$seasonws', '$episodews', '$durationws', '$ratews', '$imagews', '$videows', '$current_date')");
+    $db_query = mysqli_query($conn, "insert into web (wname, wgenre, nosea, noepi, duration, ratings, image, video, date) values ('$namews', '$genrews', '$seasonws', '$episodews', '$durationws', '$ratews', '$imagews', '$videows', '$current_date')");
     $row  = mysqli_fetch_array($db_query);
+    echo $row;
 
     if ($db_query)
     {
@@ -66,7 +65,6 @@
     }
     else
     {
-        echo "Failed";
+        echo "oops something went wrong";
     }
-    // mysqli_close($conn);
 ?>
